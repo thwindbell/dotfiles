@@ -77,9 +77,9 @@ augroup auto_comment_off
 augroup END
 
 " 編集中のファイルを<C-e>で実行 "
-autocmd BufNewFile, BufRead *.rb nnoremap <C-e> :!ruby %
-autocmd BufNewFile, BufRead *.py nnoremap <C-e> :!python %
-autocmd BufNewFile, BufRead *.pl nnoremap <C-e> :!perl %
+autocmd BufNewFile,BufRead *.rb nnoremap <C-e> :!ruby %
+autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!python %
+autocmd BufNewFile,BufRead *.pl nnoremap <C-e> :!perl %
 
 "---------------------------
 " Start Neobundle Settings.
