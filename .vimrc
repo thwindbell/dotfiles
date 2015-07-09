@@ -1,7 +1,9 @@
 set nocompatible
 
-" 画面表示の設定
+filetype off
+filetype plugin indent off
 
+" 画面表示の設定
 set number          " 行番号を表示する
 set laststatus=2    " ステータス行を常に表示
 set cmdheight=2     " メッセージ表示欄を2行確保
@@ -16,7 +18,7 @@ set t_Co=256        " 256色使用
 
 set backspace=indent,eol,start " Backspaceキーの影響範囲に制限を設けない
 set whichwrap=b,s,h,l,<,>,[,]  " 行頭行末の左右移動で行をまたぐ
-set scrolloff=8                " 上下8行の視界を確保
+set scrolloff=4                " 上下8行の視界を確保
 set sidescrolloff=16           " 左右スクロール時の視界を確保
 set sidescroll=1               " 左右スクロールは一文字づつ行う
 
@@ -68,7 +70,7 @@ set history=10000
 "ビープ音すべてを無効にする
 set visualbell t_vb=
 set noerrorbells "エラーメッセージの表示時にビープを鳴らさない
-
+"
 " オートコメントをオフ
 augroup auto_comment_off
   autocmd!
@@ -81,10 +83,12 @@ autocmd BufNewFile,BufRead *.rb nnoremap <C-e> :!ruby %
 autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!python %
 autocmd BufNewFile,BufRead *.pl nnoremap <C-e> :!perl %
 
+
+filetype plugin indent off
 "---------------------------
 " Start Neobundle Settings.
 "---------------------------
-"" bundleで管理するディレクトリを指定
+" bundleで管理するディレクトリを指定
 set runtimepath+=~/.vim/bundle/neobundle.vim/
 
 " Required:
@@ -92,11 +96,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 " neobundle自体をneobundleで管理
 NeoBundleFetch 'Shougo/neobundle.vim'
-
-" Python補完用 jedi-vim "
-NeoBundle 'davidhalter/jedi-vim'
-" Python構文エラー pyflakes-vim "
-NeoBundle 'kevinw/pyflakes-vim'
 
 " solarized カラースキーム
 NeoBundle 'altercation/vim-colors-solarized'
@@ -129,23 +128,30 @@ NeoBundle 'sjl/badwolf'
 " Inkpot カラースキーム
 NeoBundle 'ciaranm/inkpot'
 
-
 " カラースキーム一覧表示に Unite.vim を使う
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
 
+" Python補完用 jedi-vim
+NeoBundle 'davidhalter/jedi-vim'
+" Python構文エラー pyflakes-vim
+NeoBundle 'kevinw/pyflakes-vim'
+
 call neobundle#end()
 
 " Required:
-filetype plugin indent on
 
 " 未インストールのプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
 " 毎回聞かれると邪魔な場合もあるので、この設定は任意です。
 NeoBundleCheck
-
 "-------------------------
 " End Neobundle Settings.
 "-------------------------
+filetype indent plugin on
+
+autocmd FileType python setl autoindent
+autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+autocmd FileType python setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 " カラースキームの設定
 colorscheme inkpot
