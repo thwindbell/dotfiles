@@ -136,6 +136,8 @@ NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'davidhalter/jedi-vim'
 " Python構文エラー pyflakes-vim
 NeoBundle 'kevinw/pyflakes-vim'
+" plugin for template file
+NeoBundle 'aperezdc/vim-template'
 
 call neobundle#end()
 
