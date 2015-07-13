@@ -151,9 +151,9 @@ NeoBundleCheck
 "-------------------------
 filetype indent plugin on
 
-autocmd FileType python setl autoindent
-autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-autocmd FileType python setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
+autocmd FileType python,pyrex setl autoindent
+autocmd FileType python,pyrex setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+autocmd FileType python,pyrex setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 " カラースキームの設定
 colorscheme inkpot
