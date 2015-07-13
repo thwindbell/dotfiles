@@ -156,4 +156,5 @@ autocmd FileType python,pyrex setl smartindent cinwords=if,elif,else,for,while,t
 autocmd FileType python,pyrex setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 " カラースキームの設定
+syntax enable
 colorscheme inkpot
