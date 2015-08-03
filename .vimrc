@@ -49,6 +49,12 @@ set softtabstop=2 " 連続した空白に対してタブキーやバックスペ
 set autoindent    " 改行時に前の行のインデントを継続する
 set smartindent   " 改行時に入力された行の末尾に合わせて次の行のインデントを増減する
 
+" 80行目を表示
+if (exists('+colorcolumn'))
+  set colorcolumn=80
+  highlight ColorColumn ctermbg=9
+endif
+
 " 動作環境との統合関連の設定
 
 " OSのクリップボードをレジスタ指定無しで Yank, Put 出来るようにする
@@ -66,11 +72,10 @@ set wildmenu wildmode=list:longest,full
 set history=10000
 
 " ビープの設定
-
 "ビープ音すべてを無効にする
 set visualbell t_vb=
 set noerrorbells "エラーメッセージの表示時にビープを鳴らさない
-"
+
 " オートコメントをオフ
 augroup auto_comment_off
   autocmd!
@@ -78,11 +83,16 @@ augroup auto_comment_off
   autocmd BufEnter * setlocal formatoptions-=o
 augroup END
 
-" 編集中のファイルを<C-e>で実行 "
+" 編集中のファイルを<C-e>で実行
 autocmd BufNewFile,BufRead *.rb nnoremap <C-e> :!ruby %
 autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!python %
 autocmd BufNewFile,BufRead *.pl nnoremap <C-e> :!perl %
+autocmd BufNewFile,BufRead *.cpp nnoremap <C-c> :!g++ %
+autocmd BufNewFile,BufRead *.cpp nnoremap <C-e> :!./a.out
+autocmd BufNewFile,BufRead *.html nnoremap <C-e> :!open %
 
+" ショートカットコマンド
+nnoremap <C-l> :%s///gc
 
 filetype plugin indent off
 "---------------------------
@@ -96,6 +106,16 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 " neobundle自体をneobundleで管理
 NeoBundleFetch 'Shougo/neobundle.vim'
+
+"非同期処理"
+NeoBundle 'Shougo/vimproc', {
+  \ 'build' : {
+    \ 'windows' : 'make -f make_mingw32.mak',
+    \ 'cygwin' : 'make -f make_cygwin.mak',
+    \ 'mac' : 'make -f make_mac.mak',
+    \ 'unix' : 'make -f make_unix.mak',
+  \ },
+\ }
 
 " solarized カラースキーム
 NeoBundle 'altercation/vim-colors-solarized'
@@ -139,6 +159,13 @@ NeoBundle 'kevinw/pyflakes-vim'
 " plugin for template file
 NeoBundle 'aperezdc/vim-template'
 
+" C++補完用
+NeoBundle 'justmao945/vim-clang'
+
+" ファイルのツリー表示
+NeoBundle 'scrooloose/nerdtree'
+nnoremap <C-t> :NERDTree
+
 call neobundle#end()
 
 " Required:
@@ -157,4 +184,5 @@ autocmd FileType python,pyrex setl tabstop=2 expandtab shiftwidth=2 softtabstop=
 
 " カラースキームの設定
 syntax enable
-colorscheme inkpot
+"set background=dark
+colorscheme tomorrow-night

@@ -8,9 +8,11 @@ molokai
 mrkn256.vim
 mustang-vim
 neobundle.vim
+nerdtree
 pyflakes-vim
 unite-colorscheme
 unite.vim
+vim-clang
 vim-colors-solarized
 vim-colors-wombat
 vim-hybrid
@@ -19,3 +21,4 @@ vim-pyte
 vim-railscasts-theme
 vim-template
 vim-tomorrow-theme
+vimproc
