@@ -162,6 +162,17 @@ NeoBundle 'aperezdc/vim-template'
 " C++補完用
 NeoBundle 'justmao945/vim-clang'
 
+" PHP補完用
+NeoBundle 'violetyk/neocomplete-php.vim'
+let g:neocomplete_php_locale = 'ja'
+" シンタックスチェック
+NeoBundle 'scrooloose/syntastic'
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=2
+
+" HTML補完
+NeoBundle 'mattn/emmet-vim'
+
 " ファイルのツリー表示
 NeoBundle 'scrooloose/nerdtree'
 nnoremap <C-t> :NERDTree

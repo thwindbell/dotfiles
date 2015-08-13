@@ -252,6 +252,14 @@ neobundle#load_toml({filename}, [{options}])
 		unite_sources = [ 'neosnippet',
 		  'neosnippet/user', 'neosnippet/runtime']
 
+		  [[plugins.depends]]
+		  repository = 'honza/vim-snippet'
+		  name = 'honza-snippet'
+
+		[[plugins]]
+		repository = 'Shougo/neobundle.vim'
+		fetch = 1
+
 		[[plugins]]
 		repository = 'Shougo/vimproc.vim'
 
@@ -963,6 +971,11 @@ OPTIONS 					*neobundle-options*
 		lazy			(Number)
 		If set to 1, neobundle doesn't add the path to user
 		runtimepath.
+
+						*neobundle-options-fetch*
+		fetch			(Number)
+		If set to 1, neobundle doesn't add the path to user
+		runtimepath, and doesn't load the bundle.
 
 						*neobundle-options-force*
 		force			(Number)

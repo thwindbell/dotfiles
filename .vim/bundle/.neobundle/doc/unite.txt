@@ -1182,7 +1182,9 @@ M		|<Plug>(unite_disable_max_candidates)|
 <C-l>		|<Plug>(unite_redraw)|
 <C-h>		|<Plug>(unite_delete_backward_path)|
 gg		|<Plug>(unite_cursor_top)|
+<C-Home>	|<Plug>(unite_cursor_top)|
 G		|<Plug>(unite_cursor_bottom)|
+<C-End>		|<Plug>(unite_cursor_bottom)|$
 j		|<Plug>(unite_loop_cursor_down)|
 <Down>		|<Plug>(unite_loop_cursor_down)|
 k		|<Plug>(unite_loop_cursor_up)|
@@ -2142,8 +2144,9 @@ file_rec/async	Similar to |unite-source-file_rec|, but get files asynchronously.
 						*unite-source-file_rec/neovim*
 file_rec/neovim	Similar to |unite-source-file_rec|, but get files
 		asynchronously by neovim job APIs.
-		Note: Requires neovim.
-		Note: Requires the "ag" or "find" command.
+		Note: Requires neovim and the "find" command.
+		Note: Does not work "ag" command.
+		https://github.com/Shougo/unite.vim/issues/961
 		Note: Windows "find" command is not supported.
 		Note: If you edit one of the files in Vim, the source will
 		update its cache.
@@ -2249,6 +2252,7 @@ window		Nominates opened windows as candidates, ordering by time
 
 		Source arguments:
 		1. "no-current" removes current window from candidates.
+		2. "all" gathers all tab windows candidates.
 
 						*unite-source-window/gui*
 window/gui	Nominates opened GUI windows as candidates.

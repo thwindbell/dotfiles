@@ -1,6 +1,7 @@
 Lucius
 Zenburn
 badwolf
+emmet-vim
 inkpot
 jedi-vim
 jellybeans.vim
@@ -8,8 +9,10 @@ molokai
 mrkn256.vim
 mustang-vim
 neobundle.vim
+neocomplete-php.vim
 nerdtree
 pyflakes-vim
+syntastic
 unite-colorscheme
 unite.vim
 vim-clang
