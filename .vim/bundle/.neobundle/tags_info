@@ -9,7 +9,8 @@ molokai
 mrkn256.vim
 mustang-vim
 neobundle.vim
-neocomplete-php.vim
+neosnippet
+neosnippet-snippets
 nerdtree
 pyflakes-vim
 syntastic
