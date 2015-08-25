@@ -66,6 +66,7 @@ autocmd BufNewFile,BufRead *.pl nnoremap <C-e> :!perl %
 autocmd BufNewFile,BufRead *.cpp nnoremap <C-c> :!g++ %
 autocmd BufNewFile,BufRead *.cpp nnoremap <C-e> :!./a.out
 autocmd BufNewFile,BufRead *.html nnoremap <C-e> :!open %
+autocmd BufNewFile,BufRead *.php\| :set dictionary=~/.vim/dictinary/php.dict filetype=php
 
 nnoremap <C-l> :%s///gc
 
@@ -114,6 +115,17 @@ NeoBundle 'justmao945/vim-clang'
 
 " NeoBundle 'violetyk/neocomplete-php.vim'
 " let g:neocomplete_php_locale = 'ja'
+" PHP Keyword Complement"
+NeoBundle "Shougo/neocomplcache"
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_smart_case = 1
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_manual_completion_start_length = 0
+let g:neocomplcache_caching_percent_in_statusline = 1
+let g:neocomplcache_enable_skip_completion = 1
+let g:neocomplcache_skip_input_time = '0.5'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 " Plugin key-mappings.

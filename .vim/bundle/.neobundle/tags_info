@@ -9,6 +9,7 @@ molokai
 mrkn256.vim
 mustang-vim
 neobundle.vim
+neocomplcache
 neosnippet
 neosnippet-snippets
 nerdtree
