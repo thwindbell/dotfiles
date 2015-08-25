@@ -12,7 +12,6 @@ set list
 set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<,eol:<
 set t_Co=256        
 
-
 set backspace=indent,eol,start 
 set whichwrap=b,s,h,l,<,>,[,]  
 set scrolloff=4                
@@ -66,7 +65,6 @@ autocmd BufNewFile,BufRead *.pl nnoremap <C-e> :!perl %
 autocmd BufNewFile,BufRead *.cpp nnoremap <C-c> :!g++ %
 autocmd BufNewFile,BufRead *.cpp nnoremap <C-e> :!./a.out
 autocmd BufNewFile,BufRead *.html nnoremap <C-e> :!open %
-autocmd BufNewFile,BufRead *.php\| :set dictionary=~/.vim/dictinary/php.dict filetype=php
 
 nnoremap <C-l> :%s///gc
 
@@ -166,6 +164,7 @@ filetype indent plugin on
 autocmd FileType python,pyrex setl autoindent
 autocmd FileType python,pyrex setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd FileType python,pyrex setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
+autocmd BufNewFile,BufRead *.php :set dictionary=~/.vim/dictinary/php.dict filetype=php
 
 syntax enable
 colorscheme inkpot
