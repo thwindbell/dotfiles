@@ -119,6 +119,7 @@
 :SyntasticReset	syntastic.txt	/*:SyntasticReset*
 :SyntasticSetLoclist	syntastic.txt	/*:SyntasticSetLoclist*
 :SyntasticToggleMode	syntastic.txt	/*:SyntasticToggleMode*
+:Template	template.txt	/*:Template*
 :Unite	unite.txt	/*:Unite*
 :UniteBookmarkAdd	unite.txt	/*:UniteBookmarkAdd*
 :UniteClose	unite.txt	/*:UniteClose*
@@ -333,6 +334,7 @@ emmet.txt	emmet.txt	/*emmet.txt*
 filter-overrides	syntastic.txt	/*filter-overrides*
 g:clang_auto	clang.txt	/*g:clang_auto*
 g:clang_c_options	clang.txt	/*g:clang_c_options*
+g:clang_compilation_database	clang.txt	/*g:clang_compilation_database*
 g:clang_cpp_completeopt	clang.txt	/*g:clang_cpp_completeopt*
 g:clang_cpp_options	clang.txt	/*g:clang_cpp_options*
 g:clang_diagsopt	clang.txt	/*g:clang_diagsopt*
@@ -366,6 +368,7 @@ g:jedi#popup_on_dot	jedi-vim.txt	/*g:jedi#popup_on_dot*
 g:jedi#popup_select_first	jedi-vim.txt	/*g:jedi#popup_select_first*
 g:jedi#rename_command	jedi-vim.txt	/*g:jedi#rename_command*
 g:jedi#show_call_signatures	jedi-vim.txt	/*g:jedi#show_call_signatures*
+g:jedi#smart_auto_mappings	jedi-vim.txt	/*g:jedi#smart_auto_mappings*
 g:jedi#squelch_py_warning	jedi-vim.txt	/*g:jedi#squelch_py_warning*
 g:jedi#usages_command	jedi-vim.txt	/*g:jedi#usages_command*
 g:jedi#use_splits_not_buffers	jedi-vim.txt	/*g:jedi#use_splits_not_buffers*
@@ -680,6 +683,15 @@ syntastic-vim-virtualenv	syntastic.txt	/*syntastic-vim-virtualenv*
 syntastic-ycm	syntastic.txt	/*syntastic-ycm*
 syntastic-zsh	syntastic.txt	/*syntastic-zsh*
 syntastic.txt	syntastic.txt	/*syntastic.txt*
+template-commands	template.txt	/*template-commands*
+template-configuration	template.txt	/*template-configuration*
+template-contents	template.txt	/*template-contents*
+template-introduction	template.txt	/*template-introduction*
+template-search-order	template.txt	/*template-search-order*
+template-usage	template.txt	/*template-usage*
+template-user-variables	template.txt	/*template-user-variables*
+template-variables	template.txt	/*template-variables*
+template.txt	template.txt	/*template.txt*
 toggle-background	solarized.txt	/*toggle-background*
 toggle-bg	solarized.txt	/*toggle-bg*
 togglebg	solarized.txt	/*togglebg*
