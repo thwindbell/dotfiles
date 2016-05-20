@@ -53,6 +53,9 @@ set history=10000
 set visualbell t_vb=
 set noerrorbells 
 
+let g:email = "t.hirayama@bravesoft.co.jp"
+let g:username = "Takayuki_Hirayama"
+
 augroup auto_comment_off
   autocmd!
   autocmd BufEnter * setlocal formatoptions-=r
@@ -103,6 +106,7 @@ NeoBundle 'sjl/badwolf'
 NeoBundle 'ciaranm/inkpot'
 
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
 
 NeoBundle 'davidhalter/jedi-vim'

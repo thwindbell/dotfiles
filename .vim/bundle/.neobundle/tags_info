@@ -10,6 +10,7 @@ mrkn256.vim
 mustang-vim
 neobundle.vim
 neocomplcache
+neomru.vim
 neosnippet
 neosnippet-snippets
 nerdtree
