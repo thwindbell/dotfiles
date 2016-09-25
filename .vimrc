@@ -31,9 +31,9 @@ set wrapscan
 set gdefault   
 
 set expandtab     
-set tabstop=2     
-set shiftwidth=2  
-set softtabstop=2 
+set tabstop=4     
+set shiftwidth=4  
+set softtabstop=4 
 
 set autoindent    
 set smartindent   
@@ -52,6 +52,9 @@ set history=10000
 
 set visualbell t_vb=
 set noerrorbells 
+
+set tags+=./tags;
+nnoremap <C-]> g<C-]>
 
 let g:email = "t.hirayama@bravesoft.co.jp"
 let g:username = "Takayuki_Hirayama"
@@ -89,6 +92,7 @@ NeoBundle 'Shougo/vimproc', {
   \ },
 \ }
 
+" Colorschemes 
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'croaker/mustang-vim'
 NeoBundle 'jeffreyiacono/vim-colors-wombat'
@@ -104,13 +108,26 @@ NeoBundle 'sickill/vim-monokai'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'sjl/badwolf'
 NeoBundle 'ciaranm/inkpot'
+NeoBundle 'aereal/vim-colors-japanesque'
+NeoBundle 'ujihisa/unite-colorscheme'
 
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'ujihisa/unite-colorscheme'
 
+" Syntax Check
+NeoBundle 'scrooloose/syntastic'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['pyflakes']
+
+" Python
 NeoBundle 'davidhalter/jedi-vim'
-NeoBundle 'kevinw/pyflakes-vim'
+" NeoBundle 'kevinw/pyflakes-vim'
 NeoBundle 'aperezdc/vim-template'
 
 NeoBundle 'justmao945/vim-clang'
@@ -143,20 +160,34 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
       \ "\<Plug>(neosnippet_expand_or_jump)"
       \: "\<TAB>"
 
-let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/'
+let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/neosnippets/'
  
 " For snippet_complete marker.
 if has('conceal')
-    set conceallevel=2 concealcursor=i
-  endif
-NeoBundle 'scrooloose/syntastic'
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=2
+  set conceallevel=2 concealcursor=i
+endif
 
 NeoBundle 'mattn/emmet-vim'
 
 NeoBundle 'scrooloose/nerdtree'
-nnoremap <C-t> :NERDTree
+nnoremap <silent><C-t> :NERDTree<CR>
+autocmd vimenter * if !argc() | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+NeoBundle 'soramugi/auto-ctags.vim'
+
+NeoBundle 'itchyny/lightline.vim'
+
+NeoBundle 'nathanaelkane/vim-indent-guides'
+" vim-indent-guides
+let g:indent_guides_auto_colors=0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=236
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=238
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_guide_size=2
+
+NeoBundle 'violetyk/cake.vim'
+let g:cakephp_enable_auto_mode=1
 
 call neobundle#end()
 
@@ -167,8 +198,12 @@ filetype indent plugin on
 
 autocmd FileType python,pyrex setl autoindent
 autocmd FileType python,pyrex setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-autocmd FileType python,pyrex setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
+autocmd FileType python,pyrex setl tabstop=4 expandtab shiftwidth=4 softtabstop=4
 autocmd BufNewFile,BufRead *.php :set dictionary=~/.vim/dictinary/php.dict filetype=php
 
 syntax enable
 colorscheme inkpot
+" colorscheme japanesque
+
+nnoremap <silent><C-o> :e sftp://[sftp-1]182.171.81.180/ota/<CR>
+
