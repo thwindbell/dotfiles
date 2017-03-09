@@ -1,6 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/windbell/.cache/pip/log'
-let g:netrw_dirhist_2='/Users/hirayamatakayuki/Work/BT2/FizzBuzz/ruby'
-let g:netrw_dirhist_3='/Users/hirayamatakayuki/Work/BT2/FizzBuzz/ruby/test'
-let g:netrw_dirhist_4='/Users/hirayamatakayuki/Work/BT2/FizzBuzz/perl/lib/FizzBuzz/WebAPI'
+let g:netrw_dirhist_cnt =0
